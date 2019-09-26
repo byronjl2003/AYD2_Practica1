@@ -1,8 +1,8 @@
-version: '1.24.1'
+version: '3.7'
 services:
   service:
     image: nginx
     ports: 
-      -'8080:80'
+      - '8080:80'
       
 
