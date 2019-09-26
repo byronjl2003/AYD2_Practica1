@@ -3,7 +3,7 @@ services:
   service:
     build:
       dockerfile: Dockerfile
-      context: .
+      context: ./web
     ports: 
       - '8080:80'
       
