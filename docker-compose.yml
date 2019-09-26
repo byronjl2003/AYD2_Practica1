@@ -13,7 +13,7 @@ services:
     depends_on:
       - mysql-db   
   mysql-db:
-    image: mysql-db
+    image: mysql
     ports: 
       - '3306:3306'      
 
