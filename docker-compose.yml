@@ -1,7 +1,9 @@
 version: '3.7'
 services:
   service:
-    image: nginx
+    build:
+      dockerfile: Dockerfile
+      context: .
     ports: 
       - '8080:80'
       
