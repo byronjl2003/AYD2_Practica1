@@ -1,5 +1,7 @@
 version: '3.7'
-
+volumes: 
+  mysql-db-data:
+    name: mysql-db-data
 services:
   frontend:    
     build: 
@@ -23,3 +25,5 @@ services:
       context: ./mysql-db
     ports: 
       - '3306:3306'
+    volumes: 
+      - 'mysql-db-data: /var/lib/mysql'  

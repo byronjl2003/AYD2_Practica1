@@ -1,3 +1,5 @@
 FROM mysql
-ENV MYSQL_ROOT_PASSWORD secret
+ENV MYSQL_DATABASE AYD2
+ENV MYSQL_ROOT_PASSWORD AYD2
+COPY ./mysql-db/ /docker-entrypoint-initdb.d/
 EXPOSE 3306
