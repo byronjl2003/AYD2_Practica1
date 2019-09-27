@@ -25,5 +25,5 @@ services:
       context: ./mysql-db
     ports: 
       - '3306:3306'
-    #volumes: 
-     # - 'mysql-db-data: /var/lib/mysql'  
+    volumes: 
+      - 'mysql-db-data'  

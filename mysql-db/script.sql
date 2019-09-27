@@ -1,7 +1,7 @@
-create table usuario(
+CREATE TABLE IF NOT EXISTS usuario(
 id INT AUTO_INCREMENT, 
-username varchar(255) NOT NULL UNIQUE,
+username varchar(255) NOT NULL,
 contenido varchar(255) NOT NULL,
-fecha date,
+fecha datetime,
 primary key(id,username)
 );
