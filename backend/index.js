@@ -3,7 +3,7 @@ const app=express();
 const morgan=require('morgan');
 
 //settings
-app.set('port',8080);
+app.set('port',80);
 app.set('json spaces',2);
 
 
@@ -15,12 +15,12 @@ app.use(express.json());
 
 //routes
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.send('BIENVENIDOS');
   });
+*/
 
-
-//app.use(require('./routes/routes'));
+app.use(require('./routes/routes'));
 
 
 
