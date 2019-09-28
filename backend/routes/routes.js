@@ -23,15 +23,25 @@ router.get('/api/', (req, res) => {
 
   // Obtener un usuario por username
 router.get('/api/:username', (req, res) => {
-    const { username } = req.params; 
-    mysqlConnection.query('SELECT * FROM usuario WHERE username = ?', [username], (err, rows, fields) => {
-      if (!err) {
-        res.json(rows);
-      } else {
-        console.log(err);
-      }
-    });
-  });
+    
+    module.exports = function(req, res, next) {
+        
+        req.getConnection(function(err, connection) {
+          if (err) return next(err);
+          
+          connection.query('SELECT 1 AS RESULT', [], function(err, results) {
+            if (err) return next(err);
+            
+            results[0].RESULT;
+            // -> 1
+            
+            res.send(200);
+          });
+          
+        });
+        
+    }
+});
 
 
   // INSERT UN USUARIO
