@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const mysqlConnection=require('../conexion_db');
+//const mysqlConnection=require('../conexion_db');
 
 // GET all Employees
 router.get('/', (req, res) => {

@@ -1,15 +1,7 @@
 
 
 
-var mysql = require('mysql'), // node-mysql module
-    myConnection = require('express-myconnection'), // express-myconnection module
-    dbOptions = {
-      host: '18.222.145.38',
-      user: 'root',
-      password: 'secret',
-      port: 3306,
-      database: 'ayd2'
-    };
+
 /*const mysqlConnection = mysql.createConnection({
   host: '18.222.145.38',
   port:3306,
@@ -22,6 +14,6 @@ var mysql = require('mysql'), // node-mysql module
   multipleStatements: true
 });*/
 
-app.use(myConnection(mysql, dbOptions, 'single'));
+//app.use(myConnection(mysql, dbOptions, 'single'));
 
-module.exports = mysqlConnection;
+//module.exports = mysqlConnection;

@@ -11,7 +11,16 @@ app.set('json spaces',2);
 app.use(morgan('dev'));  //se puede usar combined para obtener mas información de la petición
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
+var mysql = require('mysql'), // node-mysql module
+    myConnection = require('express-myconnection'), // express-myconnection module
+    dbOptions = {
+      host: '18.222.145.38',
+      user: 'root',
+      password: 'secret',
+      port: 3306,
+      database: 'ayd2'
+    };
+app.use(myConnection(mysql, dbOptions, 'single'));
 
 //routes
 
