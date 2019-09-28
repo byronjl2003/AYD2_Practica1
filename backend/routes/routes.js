@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//const mysqlConnection=require('../conexion_db');
+const mysqlConnection=require('../conexion_db');
 
 // GET all Employees
 router.get('/', (req, res) => {
@@ -18,30 +18,19 @@ router.get('/api/', (req, res) => {
         console.log(err);
       }
     });  
-    mysqlConnection.end();
   });
 
   // Obtener un usuario por username
 router.get('/api/:username', (req, res) => {
-    
-    module.exports = function(req, res, next) {
-        
-        req.getConnection(function(err, connection) {
-          if (err) return next(err);
-          
-          connection.query('SELECT 1 AS RESULT', [], function(err, results) {
-            if (err) return next(err);
-            
-            results[0].RESULT;
-            // -> 1
-            
-            res.send(200);
-          });
-          
-        });
-        
-    }
-});
+    const { username } = req.params; 
+    mysqlConnection.query('SELECT * FROM usuario WHERE username = ?', [username], (err, rows, fields) => {
+      if (!err) {
+        res.json(rows);
+      } else {
+        console.log(err);
+      }
+    });
+  });
 
 
   // INSERT UN USUARIO
