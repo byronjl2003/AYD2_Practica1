@@ -15,7 +15,12 @@ app.use(express.json());
 
 //routes
 
-app.use(require('./routes/routes'));
+app.get('/', (req, res) => {
+    res.send('BIENVENIDOS');
+  });
+
+
+//app.use(require('./routes/routes'));
 
 
 
