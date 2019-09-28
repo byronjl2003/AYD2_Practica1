@@ -6,9 +6,6 @@ fecha datetime NOT NULL DEFAULT NOW(),
 primary key(id,username)
 );
 
-ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'secret';
-FLUSH PRIVILEGES;
-
 DELIMITER //
 CREATE PROCEDURE ADD_OR_EDIT_USER(IN _id INT,IN _username varchar(255),IN _contenido varchar(255))
 BEGIN
@@ -23,3 +20,7 @@ BEGIN
     END IF;    
     SELECT _id as id;
 END
+DELIMITER//
+
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'secret';
+FLUSH PRIVILEGES;
