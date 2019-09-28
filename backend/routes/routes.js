@@ -18,6 +18,7 @@ router.get('/api/', (req, res) => {
         console.log(err);
       }
     });  
+    mysqlConnection.end();
   });
 
   // Obtener un usuario por username
