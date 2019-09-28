@@ -5,7 +5,7 @@ var _mysql,
 
 //const mysql = require('mysql');
 
-const _connection = _mysql.createConnection({
+_connection = _mysql.createConnection({
     host: '18.222.145.38',
   port:3306,
   //socketPath:' /var/run/mysqld/mysqld.sock',
