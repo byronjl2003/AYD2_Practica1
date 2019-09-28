@@ -1,9 +1,14 @@
 var mysql = require('mysql');
 
+var pool  = mysql.createPool({
+    connectionLimit : 10,
+    host: '18.222.145.38',
+    user: 'root',
+    password: 'secret',
+    database: 'ayd2'
+});
 
-
-
-var mysqlConnection = mysql.createConnection({
+/*var mysqlConnection = mysql.createConnection({
    host: '18.222.145.38',
    user: 'root',
    password: 'secret',
@@ -19,6 +24,7 @@ mysqlConnection.connect(function(error){
    }
 });
 mysqlConnection.end();
+*/
 
 /*const mysqlConnection = mysql.createConnection({
   host: '18.222.145.38',
@@ -43,4 +49,4 @@ mysqlConnection.connect(function (err) {
 });*/
 
 
-module.exports = mysqlConnection;
+module.exports = pool;
