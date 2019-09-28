@@ -3,7 +3,7 @@ const app=express();
 const morgan=require('morgan');
 
 //settings
-app.set('port',8080);
+app.set('port',80);
 app.set('json spaces',2);
 
 
