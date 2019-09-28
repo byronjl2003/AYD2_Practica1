@@ -6,6 +6,7 @@ const mysqlConnection = mysql.createConnection({
   password: 'secret',
   database: 'ayd2',
   insecureAuth : true,
+  port:'3306',
   multipleStatements: true
 });
 

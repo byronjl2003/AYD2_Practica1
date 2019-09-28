@@ -3,7 +3,7 @@ const app=express();
 const morgan=require('morgan');
 
 //settings
-app.set('port',80);
+app.set('port',8080);
 app.set('json spaces',2);
 
 
@@ -21,6 +21,6 @@ app.use(require('./routes/routes'));
 
 
 //inicio del servidor
-app.listen(8080,()=>{
+app.listen(app.get('port'),()=>{
     console.log(`Server en el puerto ${app.get('port')}`);
 });
