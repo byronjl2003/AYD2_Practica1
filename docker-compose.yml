@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile 
       context: ./backend
     ports:
-      - '8080:8080'
+      - '8080:80'
     depends_on:
       - mysql-db
   mysql-db:
@@ -24,6 +24,6 @@ services:
       dockerfile: Dockerfile
       context: ./mysql-db
     ports: 
-      - '3306:3306'
+      - '33060:3306'
     volumes: 
       - 'mysql-db-data:/var/lib/mysql'

@@ -4,6 +4,12 @@ const router = express.Router();
 const mysqlConnection=require('../conexion_db');
 
 // GET all Employees
+router.get('/', (req, res) => {
+    res.send('BIENVENIDOS');
+  });
+
+
+// GET all Employees
 router.get('/api/', (req, res) => {
     mysqlConnection.query('SELECT * FROM usuario', (err, rows, fields) => {
       if(!err) {
