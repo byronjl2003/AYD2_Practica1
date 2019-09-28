@@ -6,14 +6,14 @@ var mysqlConnection = mysql.createConnection({
    database: 'ayd2',
    port: 3306
 });
-connection.connect(function(error){
+mysqlConnection.connect(function(error){
    if(error){
       throw error;
    }else{
       console.log('Conexion correcta.');
    }
 });
-connection.end();
+mysqlConnection.end();
 
 /*const mysqlConnection = mysql.createConnection({
   host: '18.222.145.38',
