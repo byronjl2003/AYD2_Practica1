@@ -5,7 +5,8 @@ var pool  = mysql.createPool({
     host: '18.222.145.38',
     user: 'root',
     password: 'secret',
-    database: 'ayd2'
+    database: 'ayd2',
+    multipleStatements: true
 });
 
 /*var mysqlConnection = mysql.createConnection({

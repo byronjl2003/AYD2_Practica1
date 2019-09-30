@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Principal - AYD2</title>
+    <title>Principal - Tweets</title>
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
@@ -18,7 +18,7 @@
         <div class="container"><a class="navbar-brand" href="#">AYD2</a><button class="navbar-toggler"
                 data-toggle="collapse" data-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button"
-                    href="/principal">Principal</a></div>
+                href="/principal">Principal</a></div>
         </div>
     </nav>
     <header class="masthead text-white text-center"
@@ -29,25 +29,8 @@
                 <div class="col-xl-9 mx-auto">
                     <h1 class="bounce animated mb-5" style="font-size: 75px;">twitter&nbsp;<i class="fa fa-twitter"></i>
                     </h1>
-                </div>
+                </div>                               
                 
-                <div class="col-md-10 col-lg-8 col-xl-7 offset-xl-3 mx-auto" style="padding-bottom: 15px;">
-                    <form method="POST" action="/getweet">
-                        <div class="form-row">
-                            <div class="col-12 col-md-12 col-xl-6 offset-xl-0 mb-2 mb-md-0"><input  class="form-control form-control-lg pulse animated" type="text" required="" placeholder="Usuario" autofocus="" autocomplete="on" name="obtener_usuario"></div>
-                            <div class="col"><button class="btn btn-primary btn-block btn-lg" type="submit" style="margin-top: 0;">Obtener tweets</button></div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-10 col-lg-8 col-xl-12 mx-auto" style="padding-bottom: 15px;">
-                    <form method="POST" action="/write">
-                        <div class="form-row">
-                            <div class="col-12 col-md-12 col-xl-4 offset-xl-0 mb-2 mb-md-0"><input class="form-control form-control-lg pulse animated" type="text" required="" placeholder="Usuario" autofocus="" autocomplete="on" name="username"></div>
-                            <div class="col-xl-6"><input class="form-control form-control-lg pulse animated" type="text" required="" placeholder="¡Escribí contenido!" autofocus="" autocomplete="on" style="margin-top: 0;" name="contenido"></div>
-                            <div class="col-xl-2 offset-xl-0"><button class="btn btn-primary btn-block btn-lg" type="submit" style="margin-top: 0;">Publicar Ahora</button></div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </header>
@@ -55,9 +38,13 @@
     <footer class="footer bg-light">
         <div class="container" style="padding-bottom: 0;padding-right: 0;padding-left: 0;">
 
+            <%if (tweets.length==0){%>
+                <h1>No existen tweets para mostrar</h1>
 
+            <%}%>
             <% for(var i=0; i < tweets.length; i++) { %>
 
+                
 
                 <div class="row" style="padding-bottom: 10px;">
                     <div class="col">

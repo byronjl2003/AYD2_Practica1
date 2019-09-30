@@ -20,7 +20,7 @@ router.get('/api/', (req, res) => {
     });  
   });
 
-  // Obtener un usuario por username
+  // Obtener un tweet por username
 router.get('/api/:username', (req, res) => {
     const { username } = req.params; 
     mysqlConnection.query('SELECT * FROM usuario WHERE username = ?', [username], (err, rows, fields) => {
@@ -73,7 +73,7 @@ router.post('/api/insertar', (req, res) => {
   });
 
   // borrar un tweet por id 
-  router.delete('/api/delete/:id', (req, res) => {
+  router.post('/api/delete/:id', (req, res) => {
     const {id} = req.params; 
     mysqlConnection.query('DELETE FROM usuario WHERE id = ?', [id], (err, rows, fields) => {
       if (!err) {
