@@ -1,4 +1,4 @@
-var hostApi = '18.222.145.38';
+var hostApi = '0.0.0.0';
 var portApi = '8080'
 const express = require('express');
 const router = express.Router();
