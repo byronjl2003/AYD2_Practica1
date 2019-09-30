@@ -14,7 +14,7 @@ app.engine('html', require('ejs').renderFile);//decimos que usaremos la sintaxis
 app.set('view engine', 'ejs');  //decimos que usaremos el motor de plantillas ejs
 app.set('port', 4000);
 app.set('host', '18.222.145.38');
-app.set('portApi', '8080');
+
 
 //app.set('host', '18.222.145.38');
 
