@@ -1,3 +1,5 @@
+USE `ayd2`;
+
 CREATE TABLE IF NOT EXISTS usuario(
 id INT AUTO_INCREMENT, 
 username varchar(255) NOT NULL,
@@ -7,11 +9,12 @@ primary key(id,username)
 );
 
 
-
-DELIMITER //
-CREATE PROCEDURE ADD_OR_EDIT_USER(IN _id INT,IN _username varchar(255),IN _contenido varchar(255))
+DROP procedure IF EXISTS `ADD_OR_EDIT_USER`;
+DELIMITER $$
+USE `ayd2`$$
+CREATE PROCEDURE `ADD_OR_EDIT_USER`(IN _id INT,IN _username varchar(255),IN _contenido varchar(255))
 BEGIN
-	IF _id=0 THEN
+IF _id=0 THEN
 		INSERT INTO usuario(username,contenido)values(_username,_contenido);
 		SET _id= LAST_INSERT_ID();
 	ELSE
@@ -21,8 +24,8 @@ BEGIN
             WHERE id=_id;
     END IF;    
     SELECT _id as id;
-END
-DELIMITER//
+END$$
+DELIMITER ;
 
 ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'secret';
 FLUSH PRIVILEGES;
