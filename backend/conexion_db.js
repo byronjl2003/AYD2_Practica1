@@ -1,8 +1,10 @@
 var mysql = require('mysql');
+const port = process.env.PORT;
+const host = process.env.HOST;
 
 var pool  = mysql.createPool({
     connectionLimit : 10,
-    host: '18.217.191.59',
+    host: host,
     user: 'root',
     password: 'secret',
     database: 'ayd2',

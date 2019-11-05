@@ -1,16 +1,18 @@
-var hostApi = '18.217.191.59';
-var portApi = '8080'
+
+var hostApi = process.env.PORT_DB;
+var portApi = process.env.HOST_DB;
 const express = require('express');
 const router = express.Router();
 const http = require('http');
 const { parse } = require('querystring');
 var Request = require("request");
 var jsonParsed;
+const host = process.env.HOST;
 
 
 
 router.get('/', (req, res) => {
-    res.send('Hello world\n');
+    res.send(host);
 });
 
 
@@ -93,6 +95,14 @@ router.post('/delete', (req, res) => {
 
    
 });
+
+router.get('/login', (req, res) => {
+    res.render('login.html'); //Node conoce la ruta de los archivos ejs que estan dentro de views
+    //console.log(path.join(__dirname,'/views/principal.html')); muestra la ruta absoluta + la ruta del archivo a mostrar
+    //res.sendFile(path.join(__dirname,'/views/principal.html')); muestra el archivo en dicha ruta
+    //res.render('principal',{title:'Mensaje desde el servidor'});    
+});
+
 
 router.get('/prueba', (req, res) => {
     res.render('principal.html'); //Node conoce la ruta de los archivos ejs que estan dentro de views

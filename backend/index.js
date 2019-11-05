@@ -1,9 +1,12 @@
+require('dotenv').config()
 const express=require('express');
 const app=express();
 const morgan=require('morgan');
+const port = process.env.PORT;
+const host = process.env.HOST;
 
 //settings
-app.set('port',80);
+app.set('port',port);
 app.set('json spaces',2);
 
 

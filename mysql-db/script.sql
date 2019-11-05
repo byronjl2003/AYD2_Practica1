@@ -6,6 +6,8 @@ fecha datetime DEFAULT CURRENT_TIMESTAMP,
 primary key(id,username)
 );
 
+
+
 DELIMITER //
 CREATE PROCEDURE ADD_OR_EDIT_USER(IN _id INT,IN _username varchar(255),IN _contenido varchar(255))
 BEGIN
