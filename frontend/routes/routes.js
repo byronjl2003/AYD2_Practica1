@@ -1,6 +1,6 @@
 
-var hostApi = process.env.PORT_DB;
-var portApi = process.env.HOST_DB;
+var hostApi = process.env.HOST_API;
+var portApi = process.env.PORT_API;
 const express = require('express');
 const router = express.Router();
 const http = require('http');
