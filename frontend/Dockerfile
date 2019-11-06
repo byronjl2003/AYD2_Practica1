@@ -1,4 +1,7 @@
 FROM node:10
+
+ENV PRUEBA secret
+
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies

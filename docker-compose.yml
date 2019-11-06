@@ -7,16 +7,24 @@ services:
     build: 
       dockerfile: Dockerfile
       context: ./frontend
+    environment: 
+      - HOST_API=3.133.85.32 #IP PARA CONSUMIR LA API
+      - PORT_API=8080        #PUERTO DE API
+      - HOST=0.0.0.0         #PUERTO EN DONDE CORRE EL FRONTEND
+      - PORT=3000
     ports:
-      - '4000:3000'
+      - '4000:3000'  
     depends_on:
       - backend
   backend:
     build: 
       dockerfile: Dockerfile 
       context: ./backend
+    environment: 
+      - HOST=3.133.85.32 #IP DE LA BASE DE DATOS
+      - PORT=80          #PUERTO DONDE CORREO EL BACKEND
     ports:
-      - '8080:80'
+      - '8080:80'  #PUERTO DONDE CORREO EL BACKEND
     depends_on:
       - mysql-db
   mysql-db:
