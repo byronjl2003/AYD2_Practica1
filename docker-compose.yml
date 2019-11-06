@@ -24,7 +24,7 @@ services:
       - HOST=3.133.85.32 #IP DE LA BASE DE DATOS
       - PORT=80          #PUERTO DONDE CORREO EL BACKEND
     ports:
-      - '8080:80'
+      - '8080:80'  #PUERTO DONDE CORREO EL BACKEND
     depends_on:
       - mysql-db
   mysql-db:
