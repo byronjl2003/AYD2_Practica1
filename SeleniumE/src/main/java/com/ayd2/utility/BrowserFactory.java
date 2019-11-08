@@ -23,7 +23,7 @@ public class BrowserFactory {
             /home/bj/Escritorio/chromedriver_linux64/chromedriver
         }
         */
-         System.setProperty("webdriver.chrome.driver","chromedriver");
+         System.setProperty("webdriver.chrome.driver","chromedriver_linux64/chromedriver");
          //
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
