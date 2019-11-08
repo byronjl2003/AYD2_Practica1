@@ -23,12 +23,14 @@ public class BrowserFactory {
             /home/bj/Escritorio/chromedriver_linux64/chromedriver
         }
         */
-         System.setProperty("webdriver.chrome.driver","/usr/chromedriver");
+         System.setProperty("webdriver.chrome.driver","chromedriver");
          //
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
-        options.addArguments("window-size=1200x600");   
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
+        
         //driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         return driver;
