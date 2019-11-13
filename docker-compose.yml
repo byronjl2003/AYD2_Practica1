@@ -27,10 +27,11 @@ services:
     depends_on:
       - mysql-db
   mysql-db:
+    hostname: db
     build: 
       dockerfile: Dockerfile
       context: ./mysql-db
-      hostname: db
+      
     ports: 
       - '3306:3306'
     volumes: 
