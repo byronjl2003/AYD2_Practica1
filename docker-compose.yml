@@ -6,11 +6,10 @@ services:
   frontend:    
     build: 
       dockerfile: Dockerfile
-      context: ./frontend
+      context: ./frontend      
     environment: 
-      - HOST_API=3.133.85.32 #IP PARA CONSUMIR LA API
-      - PORT_API=8080        #PUERTO DE API
-      - HOST=0.0.0.0         #PUERTO EN DONDE CORRE EL FRONTEND
+      - HOST_API=backend #IP PARA CONSUMIR LA API
+      - PORT_API=80        #PUERTO DE API      
       - PORT=3000
     ports:
       - '4000:3000'  
@@ -21,7 +20,7 @@ services:
       dockerfile: Dockerfile 
       context: ./backend
     environment: 
-      - HOST=3.133.85.32 #IP DE LA BASE DE DATOS
+      - HOST=db #IP DE LA BASE DE DATOS
       - PORT=80          #PUERTO DONDE CORREO EL BACKEND
     ports:
       - '8080:80'  #PUERTO DONDE CORREO EL BACKEND

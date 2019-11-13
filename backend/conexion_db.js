@@ -1,5 +1,4 @@
 var mysql = require('mysql');
-const port = process.env.PORT;
 const host = process.env.HOST;
 
 var pool  = mysql.createPool({
