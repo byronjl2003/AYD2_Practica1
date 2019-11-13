@@ -30,6 +30,7 @@ services:
     build: 
       dockerfile: Dockerfile
       context: ./mysql-db
+      hostname: db
     ports: 
       - '3306:3306'
     volumes: 
