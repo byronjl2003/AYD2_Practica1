@@ -9,10 +9,10 @@ services:
       context: ./frontend      
     environment: 
       - HOST_API=backend #IP PARA CONSUMIR LA API
-      - PORT_API=80        #PUERTO DE API      
-      - PORT=3000
+      #- PORT_API=3000        #PUERTO DE API      
+      #- PORT=80
     ports:
-      - '4000:3000'  
+      - '80:80'  
     depends_on:
       - backend
   backend:
@@ -21,17 +21,16 @@ services:
       context: ./backend
     environment: 
       - HOST=mysql-db #IP DE LA BASE DE DATOS
-      - PORT=80          #PUERTO DONDE CORREO EL BACKEND
+      #- PORT=3000          #PUERTO DONDE CORREO EL BACKEND
     ports:
-      - '8080:80'  #PUERTO DONDE CORREO EL BACKEND
+      - '4000:4000'         #PUERTO DONDE CORRE EL BACKEND
     depends_on:
       - mysql-db
   mysql-db:
     #hostname: db
     build: 
       dockerfile: Dockerfile
-      context: ./mysql-db
-      
+      context: ./mysql-db      
     ports: 
       - '3306:3306'
     volumes: 

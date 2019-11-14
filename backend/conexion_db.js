@@ -3,7 +3,7 @@ const host = process.env.HOST;
 //
 var pool  = mysql.createPool({
     connectionLimit : 10,
-    //host: host,
+    host: host,
     user: 'root',
     password: 'secret',
     database: 'ayd2',

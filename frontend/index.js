@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // settings
 app.engine('html', require('ejs').renderFile);//decimos que usaremos la sintaxis y extension html , pero con el motor de plantillas ejs incluido
 app.set('view engine', 'ejs');  //decimos que usaremos el motor de plantillas ejs
-app.set('port', port);
+app.set('port', 80);
 //app.set('host',host);
 
 
