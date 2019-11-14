@@ -20,14 +20,14 @@ services:
       dockerfile: Dockerfile 
       context: ./backend
     environment: 
-      - HOST=db #IP DE LA BASE DE DATOS
+      - HOST=mysql-db #IP DE LA BASE DE DATOS
       - PORT=80          #PUERTO DONDE CORREO EL BACKEND
     ports:
       - '8080:80'  #PUERTO DONDE CORREO EL BACKEND
     depends_on:
       - mysql-db
   mysql-db:
-    hostname: db
+    #hostname: db
     build: 
       dockerfile: Dockerfile
       context: ./mysql-db
